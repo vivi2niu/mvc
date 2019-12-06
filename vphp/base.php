@@ -21,6 +21,13 @@ defined('ENV_PREFIX') or define('ENV_PREFIX', 'PHP_'); // 环境变量的配置�
 // 环境常量
 // 载入Loader类
 require CORE_PATH . 'Loader.php';
+require CORE_PATH . 'core.php';
+
+// 加载配置文件
+$config = require(APP_PATH . 'config.php');
+
+// 实例化框架类
+(new vphp\core($config))->run();
 
 // 加载环境变量配置文件
 //
